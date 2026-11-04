@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <script src="css/tailwindcss.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen B</title>
+  </head>
+
+  <body>
+    <div class="container mx-auto mt-1 mb-5 pb-5 bg-black">
+      <header id="header" class="bg-orange-50 p-3 font-bold">
+        Examen - El Laberinto - B
+      </header>
+
+      <main class="max-w-lg mx-auto">
+        <div class="bg-white rounded-lg px-6 py-6 mt-5 shadow-xl">
+          <div class="grid grid-cols-11 gap-0 border-2 border-stone-900" id="tablero">
+            <div class="ficha bg-white w-full h-10 text-center"></div>
+            <div class="ficha bg-white border-b-2 border-stone-900 w-full h-10 text-center">0</div>
+            <div class="ficha bg-white w-full h-10 border-b-2 border-stone-900 text-center">1</div>
+            <div class="ficha bg-white w-full h-10 border-b-2 border-stone-900 text-center">2</div>
+            <div class="ficha bg-white w-full h-10 border-b-2 border-stone-900 text-center">3</div>
+            <div class="ficha bg-white w-full h-10 border-b-2 border-stone-900 text-center">4</div>
+            <div class="ficha bg-white w-full h-10 border-b-2 border-stone-900 text-center">5</div>
+            <div class="ficha bg-white w-full h-10 border-b-2 border-stone-900 text-center">6</div>
+            <div class="ficha bg-white w-full h-10 border-b-2 border-stone-900 text-center">7</div>
+            <div class="ficha bg-white w-full h-10 border-b-2 border-stone-900 text-center">8</div>
+            <div class="ficha bg-white w-full h-10 border-b-2 border-stone-900 text-center">9</div>
+            <div class="ficha bg-white w-full h-10 border-r-2 border-stone-900 text-center">A</div>
+            <div class="ficha bg-green-300 w-full h-10" id="00"></div>
+            <div class="ficha bg-black w-full h-10" id="01"></div>
+            <div class="ficha bg-white w-full h-10" id="02"></div>
+            <div class="ficha bg-black w-full h-10" id="03"></div>
+            <div class="ficha bg-white w-full h-10" id="04"></div>
+            <div class="ficha bg-white w-full h-10" id="05"></div>
+            <div class="ficha bg-white w-full h-10" id="06"></div>
+            <div class="ficha bg-black w-full h-10" id="07"></div>
+            <div class="ficha bg-white w-full h-10" id="08"></div>
+            <div class="ficha bg-black w-full h-10" id="09"></div>
+            <div class="ficha bg-white w-full h-10 border-r-2 border-stone-900 text-center">B</div>
+            <div class="ficha bg-white w-full h-10" id="10"></div>
+            <div class="ficha bg-white w-full h-10" id="11"></div>
+            <div class="ficha bg-white w-full h-10" id="12"></div>
+            <div class="ficha bg-white w-full h-10" id="13"></div>
+            <div class="ficha bg-white w-full h-10" id="14"></div>
+            <div class="ficha bg-black w-full h-10" id="15"></div>
+            <div class="ficha bg-white w-full h-10" id="16"></div>
+            <div class="ficha bg-black w-full h-10" id="17"></div>
+            <div class="ficha bg-white w-full h-10" id="18"></div>
+            <div class="ficha bg-white w-full h-10" id="19"></div>
+            <div class="ficha bg-white w-full h-10 border-r-2 border-stone-900 text-center">C</div>
+            <div class="ficha bg-black w-full h-10" id="20"></div>
+            <div class="ficha bg-black w-full h-10" id="21"></div>
+            <div class="ficha bg-white w-full h-10" id="22"></div>
+            <div class="ficha bg-black w-full h-10" id="23"></div>
+            <div class="ficha bg-black w-full h-10" id="24"></div>
+            <div class="ficha bg-black w-full h-10" id="25"></div>
+            <div class="ficha bg-white w-full h-10" id="26"></div>
+            <div class="ficha bg-white w-full h-10" id="27"></div>
+            <div class="ficha bg-black w-full h-10" id="28"></div>
+            <div class="ficha bg-white w-full h-10" id="29"></div>
+            <div class="ficha bg-white w-full h-10 border-r-2 border-stone-900 text-center">D</div>
+            <div class="ficha bg-white w-full h-10" id="30"></div>
+            <div class="ficha bg-black w-full h-10" id="31"></div>
+            <div class="ficha bg-white w-full h-10" id="32"></div>
+            <div class="ficha bg-white w-full h-10" id="33"></div>
+            <div class="ficha bg-white w-full h-10" id="34"></div>
+            <div class="ficha bg-black w-full h-10" id="35"></div>
+            <div class="ficha bg-black w-full h-10" id="36"></div>
+            <div class="ficha bg-white w-full h-10" id="37"></div>
+            <div class="ficha bg-white w-full h-10" id="38"></div>
+            <div class="ficha bg-white w-full h-10" id="39"></div>
+            <div class="ficha bg-white w-full h-10 border-r-2 border-stone-900 text-center">E</div>
+            <div class="ficha bg-white w-full h-10" id="40"></div>
+            <div class="ficha bg-black w-full h-10" id="41"></div>
+            <div class="ficha bg-white w-full h-10" id="42"></div>
+            <div class="ficha bg-black w-full h-10" id="43"></div>
+            <div class="ficha bg-white w-full h-10" id="44"></div>
+            <div class="ficha bg-black w-full h-10" id="45"></div>
+            <div class="ficha bg-white w-full h-10" id="46"></div>
+            <div class="ficha bg-black w-full h-10" id="47"></div>
+            <div class="ficha bg-black w-full h-10" id="48"></div>
+            <div class="ficha bg-white w-full h-10" id="49"></div>
+            <div class="ficha bg-white w-full h-10 border-r-2 border-stone-900 text-center">F</div>
+            <div class="ficha bg-white w-full h-10" id="50"></div>
+            <div class="ficha bg-white w-full h-10" id="51"></div>
+            <div class="ficha bg-white w-full h-10" id="52"></div>
+            <div class="ficha bg-white w-full h-10" id="53"></div>
+            <div class="ficha bg-white w-full h-10" id="54"></div>
+            <div class="ficha bg-black w-full h-10" id="55"></div>
+            <div class="ficha bg-white w-full h-10" id="56"></div>
+            <div class="ficha bg-white w-full h-10" id="57"></div>
+            <div class="ficha bg-white w-full h-10" id="58"></div>
+            <div class="ficha bg-black w-full h-10" id="59"></div>
+            <div class="ficha bg-white w-full h-10 border-r-2 border-stone-900 text-center">G</div>
+            <div class="ficha bg-white w-full h-10" id="60"></div>
+            <div class="ficha bg-black w-full h-10" id="61"></div>
+            <div class="ficha bg-black w-full h-10" id="62"></div>
+            <div class="ficha bg-black w-full h-10" id="63"></div>
+            <div class="ficha bg-white w-full h-10" id="64"></div>
+            <div class="ficha bg-white w-full h-10" id="65"></div>
+            <div class="ficha bg-white w-full h-10" id="66"></div>
+            <div class="ficha bg-black w-full h-10" id="67"></div>
+            <div class="ficha bg-white w-full h-10" id="68"></div>
+            <div class="ficha bg-white w-full h-10" id="69"></div>
+            <div class="ficha bg-white w-full h-10 border-r-2 border-stone-900 text-center">H</div>
+            <div class="ficha bg-white w-full h-10" id="70"></div>
+            <div class="ficha bg-black w-full h-10" id="71"></div>
+            <div class="ficha bg-white w-full h-10" id="72"></div>
+            <div class="ficha bg-black w-full h-10" id="73"></div>
+            <div class="ficha bg-black w-full h-10" id="74"></div>
+            <div class="ficha bg-white w-full h-10" id="75"></div>
+            <div class="ficha bg-black w-full h-10" id="76"></div>
+            <div class="ficha bg-white w-full h-10" id="77"></div>
+            <div class="ficha bg-black w-full h-10" id="78"></div>
+            <div class="ficha bg-white w-full h-10" id="79"></div>
+            <div class="ficha bg-white w-full h-10 border-r-2 border-stone-900 text-center">I</div>
+            <div class="ficha bg-white w-full h-10" id="80"></div>
+            <div class="ficha bg-white w-full h-10" id="81"></div>
+            <div class="ficha bg-white w-full h-10" id="82"></div>
+            <div class="ficha bg-black w-full h-10" id="83"></div>
+            <div class="ficha bg-white w-full h-10" id="84"></div>
+            <div class="ficha bg-white w-full h-10" id="85"></div>
+            <div class="ficha bg-white w-full h-10" id="86"></div>
+            <div class="ficha bg-white w-full h-10" id="87"></div>
+            <div class="ficha bg-black w-full h-10" id="88"></div>
+            <div class="ficha bg-orange-600 w-full h-10" id="89"></div>
+          </div>
+        </div>
+
+        <div class="flex flex-col">
+          <p class="flex justify-center mb-10 mt-10">
+            <button id="partida"
+              class="w-1/2 bg-blue-600 mx-3 px-2 py-3 text-white items-center opacity-90 mr-5 uppercase font-bold"
+              type="button">Nueva Partida!!
+            </button>
+          </p>
+        </div>
+
+        <div class="flex flex-col">
+          <p class="flex justify-center items-baseline mb-10 mt-10">
+            <span class="text-slate-200">Tiempo: </span> <input type="text" readonly name="segundos" id="segundos"
+              class="ml-2 bg-gray-100 border-2 border-lime-900 shadow p-3" value="0"></input>
+          </p>
+        </div>
+
+        <div class="flex flex-col">
+          <div
+            class="rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-500 p-3 font-bold border-stone-900 border-2">
+            <p class="text-center underline decoration-double tracking-widest italic text-lg">
+              Mejor tiempo:
+            </p>
+            <p class="text-center uppercase tracking-widest italic text-2xl">
+              <span class="tiempos">0</span>
+            </p>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+
+</html>
