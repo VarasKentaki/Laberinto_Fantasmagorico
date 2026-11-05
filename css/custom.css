@@ -1,31 +1,29 @@
 body {
-    background: white;   
+  background: white;
 }
 
 header {
-    padding: 10px;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-size: 22px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 100;
+  padding: 10px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
 }
 
-.player{
-    height: 2.5rem;
-    margin-left: 0.25rem;
-    max-width: 100%;
-    display: block;
-    z-index: 0;
+.player {
+  height: 2.5rem;
+  margin-left: 0.25rem;
+  max-width: 100%;
+  display: block;
+  z-index: 0;
 }
 
-.fantasma{
-    height: 1.8rem;
-    margin-top: 0.25rem;
-    margin-left: 0.25rem;
-    max-width: 90%;
-    display: block;
-    z-index: 100;
+.fantasma {
+  height: 1.8rem;
+  margin-top: 0.25rem;
+  margin-left: 0.25rem;
+  max-width: 90%;
+  display: block;
+  z-index: 100;
 }
-
- 

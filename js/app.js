@@ -13,6 +13,7 @@ const mejortiempo = document.getElementsByClassName('tiempos')[0];
 let teclado = '';
 let contador = 0;
 let posicionFantasma = [];
+let contfantasma = 0;
 let posicionJugador = 0;
 let tiempo1 = 0;
 let perseguir;
@@ -22,6 +23,7 @@ let idFantasmaArray;
 let cazado = false;
 let contadormove = 0;
 let contadortiempo = 0;
+let jugadorPosFantasma = false;
 let movimiento = [
   'Player-1.png',
   'Player-2.png',
@@ -30,8 +32,10 @@ let movimiento = [
   'Player-5.png',
   'Player-6.png',
 ];
+document.body.addEventListener('keydown', teclas);
 primero.appendChild(imagenPLayer);
 function teclas(event) {
+  const anterior = contador;
   if (cazado != true) {
     if (parseInt(divFicha[contador].id) != 89) {
       if (event.key.startsWith('Arrow')) event.preventDefault();
@@ -96,16 +100,36 @@ function teclas(event) {
     posicionFantasma = [];
     document.body.removeEventListener('keydown', teclas);
   }
+
   if (divFicha[contador].id == 89) {
     clearInterval(tiempo1);
     clearInterval(perseguir);
     contador = 0;
     posicionFantasma = [];
     document.body.removeEventListener('keydown', teclas);
+    cookies();
   }
-
-  posicionFantasma.push(contador);
+  // * Solucion para no guardar las veces que el jugador choca contra las paredes en el recorrido fantasma
+  if (anterior !== contador) {
+    posicionFantasma.push(contador);
+  }
   posicionJugador = contador;
+
+  if (posicionFantasma[contfantasma - 1] == posicionJugador) {
+    cazado = true;
+    imagenPLayer.remove();
+    contfantasma = 0;
+    posicionJugador = 0;
+    posicionFantasma = [];
+    clearInterval(moveset);
+    clearInterval(perseguir);
+    clearInterval(tiempo1);
+    clearInterval(idFantasmaArray);
+    jugadorPosFantasma = true;
+    console.log(!jugadorPosFantasma);
+  } else {
+    jugadorPosFantasma = false;
+  }
 }
 function mover() {
   document.body.addEventListener('keydown', teclas);
@@ -137,7 +161,7 @@ function IniciarFantasma() {
   }, 3000);
 }
 function fantasmaPerseguir() {
-  let contfantasma = 0;
+  contfantasma = 0;
   perseguir = setInterval(() => {
     if (posicionFantasma.length != 0) {
       if (parseInt(divFicha[posicionFantasma[contfantasma]].id) != posicionJugador) {
@@ -172,11 +196,15 @@ function tiempo() {
   }, 1000);
 }
 function cookies() {
-  let maximo;
-  if (contadortiempo < (maximo = Infinity)) {
-    mejortiempo.textContent = contadortiempo;
-    maximo = mejortiempo.textContent;
-    document.cookie = `mejorTiempo=${mejortiempo.textContent},max-age=216000`;
+  if (!jugadorPosFantasma) {
+    console.log(!jugadorPosFantasma);
+
+    let maximo;
+    if (contadortiempo < (maximo = Infinity)) {
+      mejortiempo.textContent = contadortiempo;
+      maximo = mejortiempo.textContent;
+      document.cookie = `mejorTiempo=${mejortiempo.textContent},max-age=216000`;
+    }
   }
 }
 
@@ -188,12 +216,12 @@ partida.addEventListener('click', () => {
   clearInterval(idFantasmaArray);
   contador = 0;
   cazado = false;
+  jugadorPosFantasma = false;
   jugadorArray();
   primero.appendChild(imagenPLayer);
   imagenFantasma.remove();
   mover(contador);
   tiempo();
   IniciarFantasma();
-  cookies();
   contadortiempo = 0;
 });
