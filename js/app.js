@@ -126,7 +126,6 @@ function teclas(event) {
     clearInterval(tiempo1);
     clearInterval(idFantasmaArray);
     jugadorPosFantasma = true;
-    console.log(!jugadorPosFantasma);
   } else {
     jugadorPosFantasma = false;
   }
@@ -197,8 +196,6 @@ function tiempo() {
 }
 function cookies() {
   if (!jugadorPosFantasma) {
-    console.log(!jugadorPosFantasma);
-
     let maximo;
     if (contadortiempo < (maximo = Infinity)) {
       mejortiempo.textContent = contadortiempo;
